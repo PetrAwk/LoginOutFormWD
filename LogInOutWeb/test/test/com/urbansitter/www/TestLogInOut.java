@@ -3,6 +3,7 @@ package test.com.urbansitter.www;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
@@ -61,6 +62,7 @@ public class TestLogInOut {
 			WebDriverWait driverWait = new WebDriverWait(driver, 10);
 			WebElement dynamicElement = 
 					driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='top-menu-items']/ul/li[1]/span[1]")));
+			assertTrue(usName, true);
 			System.out.println(dynamicElement.getText() + " -> Login: PASS");
 			driver.findElement(By.className("custom-logout")).click();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
