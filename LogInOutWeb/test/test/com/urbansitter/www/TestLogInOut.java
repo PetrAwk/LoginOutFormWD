@@ -31,11 +31,11 @@ public class TestLogInOut {
 			driver = new FirefoxDriver();
 			
 			//Uncomment section in case Chrome Windows
-			//System.setProperty("webdriver.chrome.driver", "C://Selenium//Chromedriver//Win//chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\Chromedriver\\Win\\chromedriver.exe");
 			//driver = new ChromeDriver();
 			
 			//Uncomment section in case Chrome Mac OS X
-			//System.setProperty("webdriver.chrome.driver", "C://Selenium//Chromedriver//Mac//chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\Chromedriver\\Mac\\chromedriver.exe");
 			//driver = new ChromeDriver();
 			
 			driver.manage().window().maximize();
@@ -63,7 +63,7 @@ public class TestLogInOut {
 			WebElement dynamicElement = 
 					driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='top-menu-items']/ul/li[1]/span[1]")));
 			assertTrue(usName, true);
-			System.out.println(dynamicElement.getText() + " -> Login: PASS");
+			System.out.println(dynamicElement.getText() + "\n-> Login: PASS");
 			driver.findElement(By.className("custom-logout")).click();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			System.out.println("-> Log out: PASS");
